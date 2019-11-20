@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add Account Details</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+		body {
+    		background-image: url(125.jpg);
+    		font-family: Arial, Helvetica, sans-serif;
+  		}
+
+  		form {
+    		border: 3px solid #662e2e;
+    		width: 600px;
+    		height: 450px;
+    		background-color: 
+  		}
+
+  		input[type=text], input[type=password] {
+    		width: 100%;
+    		padding: 12px 20px;
+    		margin: 8px 0;
+    		display: inline-block;
+    		border: 1px solid #ccc;
+    		box-sizing: border-box;
+  		}
+
+  		select {
+    		width: 100%;
+    		padding: 12px 20px;
+    		margin: 8px 0;
+    		display: inline-block;
+    		border: 1px solid #ccc;
+    		box-sizing: border-box;
+  		}
+
+  		button {
+    		background-color: #4CAF50;
+    		color: white;
+    		padding: 10px 18px;
+    		margin: 8px 0;
+    		border: none;
+    		cursor: pointer;
+    		width: 100%;
+  		}
+
+  		button:hover {
+    		opacity: 0.8;
+  		}
+
+  		.container {
+    		padding: 16px;
+   		 	width: 500px
+   		 	float: center;
+  		}
+
+  		span.psw {
+    		float: right;
+    		padding-top: 16px;
+  		}
+
+  		label {
+    		float: left;
+  		}
+                
+  		.lnk{
+                float: right;
+  		}
+                
+  		.title{
+                margin-bottom: 100px;
+  		}
+	</style>
+    </head>
+    <body>
+        <center>
+	<div class="title">
+		<h2>SIGN-UP</h2>
+	</div>
+	<div class="loginform">
+		<form action="AccountServlet" name="account" method="get" onsubmit="return Validation()">
+			<div class="container">
+				<label><b>Account No.:</b></label>
+				<input type="text" name="accno" placeholder="Enter Account no.">
+				<label><b>Current Amount:</b></label>
+				<input type="password" name="currentamt" placeholder="Enter Current Amount">
+				<label><b>Savings Amount:</b></label>
+				<input type="password" name="savingsamt" placeholder="Enter Savings Amount">
+				<label>
+					<button type="submit" value="submit">Sign Up</button>
+				</label>
+			</div>
+                </form>	
+        </div>
+	<script type="text/javascript">
+		function Validation(){
+			var accno=document.forms["account"]["accno"].value
+			var currentamt=document.forms["account"]["currentamt"].value;
+			var savingsamt=document.forms["account"]["savingsamt"].value;
+                        var flag=true;
+                        if(accno===""||currentamt===""||savingsamt===""){
+                            alert("Please fill in the empty fields");
+                            flag=false;
+                        }
+                        return flag;
+                    }
+	</script>
+	</center>
+    </body>
+</html>
